@@ -1,8 +1,54 @@
-.dice {
-	width:18vw;
-	height:10vh;
-	background-color: blue;
+.dice1{
+    float:left;
+    width:32px;
+    background:#F5F5F5;
+    border:#999 1px solid;
+    padding:40px;
+    font-size:24px;
+    text-align:center;
+    margin:10px;
 }
-main {
-	background-color: red;
+
+.dice2{
+    float:left;
+    width:32px;
+    background:#F5F5F5;
+    border:#999 1px solid;
+    padding:40px;
+    font-size:24px;
+    text-align:center;
+    margin:10px;
+}
+
+.dice3{
+    float:left;
+    width:32px;
+    background:#F5F5F5;
+    border:#999 1px solid;
+    padding:40px;
+    font-size:24px;
+    text-align:center;
+    margin:10px;
+}
+
+.dice4{
+    float:left;
+    width:32px;
+    background:#F5F5F5;
+    border:#999 1px solid;
+    padding:40px;
+    font-size:24px;
+    text-align:center;
+    margin:10px;
+}
+
+.dice5{
+    float:left;
+    width:32px;
+    background:#F5F5F5;
+    border:#999 1px solid;
+    padding:40px;
+    font-size:24px;
+    text-align:center;
+    margin:10px;
 }
