@@ -31,7 +31,7 @@ function rollDice() {
     dices.forEach(function(dice) {
         dice.value = Math.floor(Math.random() * 6) + 1;
 
-        $("." + dice.name).html(dice.value);
+        $("." + dice.name).html("<img src='img/dices/dice" + dice.value + ".gif'>");
 
     });
     
