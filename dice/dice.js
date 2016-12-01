@@ -1,6 +1,4 @@
          
-   <div class="box">
-    <button id="roll"><p>Funky Yatzy</p></button>
         <div class="first-face">
             <span class="pip"></span>
           </div>
@@ -47,5 +45,4 @@
             <span class="pip"></span>
             <span class="pip"></span>
           </div>
-        </div>
         </div>
