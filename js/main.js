@@ -1,30 +1,55 @@
 var dices = [
     {
+        "name": "dice1",
         "value": 0,
         "rollable": true
     },
     {
+        "name": "dice2",
         "value": 0,
         "rollable": true
     },
     {
+        "name": "dice3",
         "value": 0,
         "rollable": true
     },
     {
+        "name": "dice4",
         "value": 0,
         "rollable": true
     },
     {
+        "name": "dice5",
         "value": 0,
         "rollable": true
     }
 ];
 
 
-
-
 function rollDice() {
+    dices.forEach(function(dice) {
+        dice.value = Math.floor(Math.random() * 6) + 1;
+
+        $("." + dice.name).html(dice.value);
+
+    });
+    
+}
+
+$(document).ready(function() {
+
+    $(".roll").on("click", function() {
+        rollDice();
+    });
+
+console.log(dices);
+
+});
+
+
+
+/* function rollDice() {
     var die1 = document.getElementById("die1");
     var die2 = document.getElementById("die2");
     var die3 = document.getElementById("die3");
@@ -32,6 +57,14 @@ function rollDice() {
     var die5 = document.getElementById("die5");
 
     var status = document.getElementById("status");
+
+    for(var i = 1; i < 6; i++){
+        var dice + i = Math.floor(Math.random() * 6) + 1;
+
+        console.log(dice + i);
+    };
+
+
 
     var dice1 = Math.floor(Math.random() * 6) + 1;
     var dice2 = Math.floor(Math.random() * 6) + 1;
@@ -47,5 +80,5 @@ function rollDice() {
     die4.innerHTML = dice4;
     die5.innerHTML = dice5;
 
-    status.innerHTML = "You rolled"+diceTotal+".";
-}
+    status.innerHTML = "You rolled " + diceTotal + ".";
+} */
