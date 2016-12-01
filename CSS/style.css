@@ -9,6 +9,16 @@ h1 {
 .col-xs-2 {
 	width: 100%;
 	font-size: 20px;
+<<<<<<< HEAD
 
 }
 
+=======
+}
+
+h2 {
+    font-size: 20px;
+    display: inline;
+    margin-left: 40px;
+}
+>>>>>>> 0cca9b533685c9a37cc5c0ad55ad2035f97725f7
