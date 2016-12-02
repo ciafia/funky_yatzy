@@ -82,3 +82,5 @@ console.log(dices);
 
     status.innerHTML = "You rolled " + diceTotal + ".";
 } */
+
+alert('Welcome to Yatzyyyyyyyy!');
