@@ -1,3 +1,5 @@
+var currentDice = [];
+
 var dices = [
     {
         "name": "dice1",
@@ -28,19 +30,35 @@ var dices = [
 
 
 function rollDice() {
-    dices.forEach(function(dice) {
-        dice.value = Math.floor(Math.random() * 6) + 1;
+    for (i = 1; i < 6; i++) {
 
-        $("." + dice.name).html("<img src='img/dices/dice" + dice.value + ".gif'>");
+        // om die har locked, rör den inte
+        if (".die" == ".locked") {
 
-    });
-    
-}
+        // om den inte har locked, random ett värde och tryck in eller byt ut det i arrayen på rätt plats (dvs i)
+        } else { //dice is not defined, fungerade innan?
+            dice.value = Math.floor(Math.random() * 6) + 1;
+            $("." + dice.name).html("<img src='img/dices/dice" + dice.value + ".gif'>");
+            push.currentDice[i] = dice.value;
+        }
+    }
+    //dices.forEach(function(dice) {
+        //dice.value = Math.floor(Math.random() * 6) + 1;
+
+            $("." + dice.name).html("<img src='img/dices/dice" + dice.value + ".gif'>");
+
+    }
+    //push.divelace > currentDice
+
 
 $(document).ready(function() {
 
     $(".roll").on("click", function() {
         rollDice();
+    });
+
+    $(".die").click(function() {
+        $(this).toggleClass("locked");
     });
 
 console.log(dices);

@@ -11,3 +11,7 @@ h1 {
 	margin: 10px;
 	margin-left: 19vw;
 }
+
+.locked {
+    background-color: blue;
+}
