@@ -41,6 +41,7 @@ $(document).ready(function() {
 
     $(".roll").on("click", function() {
         rollDice();
+        
     });
 
 console.log(dices);
