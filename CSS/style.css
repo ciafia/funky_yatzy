@@ -13,14 +13,15 @@ h1 {
 }
 
 .table {
-	border: white;
-	border-width: 3px;
+	background-color: white;
+	border: grey;
+	border-width: 5px;
 	border-style: solid;
 	padding: 4px;
 }
 
 body {
-	background-image: url("../img/matta.jpg");
+	background-image: url("../img/abstract.jpg");
 	background-size: cover;
 }
 
