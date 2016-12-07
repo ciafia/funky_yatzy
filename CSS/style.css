@@ -17,3 +17,8 @@ h1 {
 	border-width: 3px;
 	border-style: solid;
 }
+
+body {
+	background-image: url("../img/matta.jpg");
+	background-size: cover;
+}
