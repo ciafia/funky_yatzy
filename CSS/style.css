@@ -11,3 +11,9 @@ h1 {
 	margin: 10px;
 	margin-left: 19vw;
 }
+
+.table, tr {
+	border: black;
+	border-width: 3px;
+	border-style: solid;
+}
