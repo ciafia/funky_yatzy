@@ -64,3 +64,13 @@ function sixes(){
 	var result = count * 6;
 	console.log(result);
 }
+
+function chance() {
+    var sum = 0;
+
+    dices.forEach(function(dice) {
+        var x = dice.value;
+        sum = sum + x; 
+    });
+    console.log(sum);
+}
