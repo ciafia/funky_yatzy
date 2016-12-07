@@ -36,8 +36,7 @@ function rollDice() {
 
         $("." + dice.name).html("<img src='img/dices/dice" + dice.value + ".gif'>");
         }
-    });
-    
+    });    
 }
 
 // Knapp för att rulla tärningarna
@@ -46,3 +45,4 @@ $(document).ready(function() {
     $(".roll").on("click", function() {
         rollDice();
     });
+});
