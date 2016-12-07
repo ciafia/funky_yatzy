@@ -29,10 +29,11 @@ var dices = [
 
 function rollDice() {
     dices.forEach(function(dice) {
+        if(dice.rollable == true){
         dice.value = Math.floor(Math.random() * 6) + 1;
 
         $("." + dice.name).html("<img src='img/dices/dice" + dice.value + ".gif'>");
-
+        }
     });
     
 }
@@ -41,9 +42,64 @@ $(document).ready(function() {
 
     $(".roll").on("click", function() {
         rollDice();
+
     });
 
 console.log(dices);
+    $(".dice1").on("click", function() {
+            
+        if(dices[0].rollable == true){
+            dices[0].rollable = false;
+        }
+        else{
+            dices[0].rollable = true;
+        }    
+            console.log(dices[0].rollable);
+    });
+    $(".dice2").on("click", function() {
+
+        if(dices[1].rollable == true){
+            dices[1].rollable = false;
+        }
+        else{
+            dices[1].rollable = true;
+        }
+            console.log(dices[1].rollable);
+
+    });
+    $(".dice3").on("click", function() {
+
+        if(dices[2].rollable == true){
+            dices[2].rollable = false;
+        }
+        else{
+            dices[2].rollable = true;
+        }
+            console.log(dices[2].rollable);
+
+    });
+    $(".dice4").on("click", function() {
+
+        if(dices[3].rollable == true){
+            dices[3].rollable = false;
+        }
+        else{
+            dices[3].rollable = true;
+        }
+            console.log(dices[3].rollable);
+
+    });
+    $(".dice5").on("click", function() {
+        if(dices[4].rollable == true){
+            dices[4].rollable = false;
+        }
+        else{
+            dices[4].rollable = true;
+        }
+            console.log(dices[4].rollable);
+
+    });
+    
 
 });
 
