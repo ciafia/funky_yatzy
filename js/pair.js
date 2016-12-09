@@ -60,7 +60,7 @@ function pair(){
 			console.log("no match");
 		}
 	var endResult = 0
-	if(firstResult >= secondResult && firstResult >= secondResult && firstResult >= thirdResult && firstResult >= fourthResult){
+	if(firstResult >= secondResult && firstResult >= thirdResult && firstResult >= fourthResult){
 		endResult = firstResult;
 	}
 	else if(secondResult >= thirdResult && secondResult >= fourthResult){
