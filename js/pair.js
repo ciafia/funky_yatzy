@@ -1,13 +1,21 @@
 function pair(){
+
+	// variabeln dice1 håller i första tärningens värde
 	var dice1 = dices[0].value;
+
+	// firstResult håller i slutvärdet. Finns inget matchning är den 0
 	firstResult = 0;
 
+		// gör en match med resterande tärningar (börjar på index 1 för att inte räkna sig själv)
 		for(var j = 1; j < 5; j++){
 
+			// comparedDice representerar tärningen som jämförs med dice1
 			comparedDice = dices[j].value;
 
+		// om dice1 matchas med någon av de andra tärningarna... 
 		if(dice1 == comparedDice){
 
+			// ...blir firstResult: värdet av dice1 + matchningen (t ex 2 + 2)
 			firstResult = dice1 + comparedDice;
 			console.log(firstResult);
 
@@ -59,18 +67,26 @@ function pair(){
 		else{
 			console.log("no match");
 		}
+
+	// endResult håller i slutresultat (finns ingen match är den 0)	
 	var endResult = 0
+
+	// jämför alla resultaten med varandra 
 	if(firstResult >= secondResult && firstResult >= thirdResult && firstResult >= fourthResult){
 		endResult = firstResult;
 	}
+
 	else if(secondResult >= thirdResult && secondResult >= fourthResult){
 		endResult = secondResult
 	}
+
 	else if(thirdResult >= fourthResult){
 		endResult = thirdResult
 	}
+
 	else{
 		endResult = fourthResult;
 	}
+
 	console.log("the endresult: " + endResult);
 }
