@@ -1,5 +1,5 @@
 h1 {
-	font-family: 'Walter Turncoat', cursive;
+	font-family: 'Bungee', cursive;
 	text-align: center;
 	font-size: 100px;
 	color:black;
@@ -47,4 +47,11 @@ td {
 .die:hover {
 	background-image: url("../img/MFF.png");
 	z-index: 5;
+}
+
+.alldices{
+	text-align: center;
+	
+
+
 }
