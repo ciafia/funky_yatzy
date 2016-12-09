@@ -1,4 +1,5 @@
-// Array för alla tärningar
+// Array för alla tärningar med tre olika nycklar. Namn, value = värdet på tärningen,
+// rollable = Är rollable true kan man kasta tärningen. Är den false så har man sparat värdet.
 var dices = [
     {
         "name": "dice1",
@@ -27,8 +28,8 @@ var dices = [
     }
 ];
 
-//Funktion för att slumpar fram ett nummer mellan 1-6 för 5 tärningar.
-
+//forEach loop som går igenom varje tärning och slumpar fram ett nummer mellan 1-6
+// Vi använder jQuery för att visa tärningar med rätt antal prickar.
 function rollDice() {
     dices.forEach(function(dice) {
         if(dice.rollable == true){
@@ -46,7 +47,9 @@ $(document).ready(function() {
         rollDice();
     });
 
-// Hold Funktion
+// Onclick funktion som gör att när du tycker på tärningen så sparar man tärningen och så
+// går den från rollable = true till rollable = false och kommer därför inte ändras
+// vid nästa kast.
 console.log(dices);
     $(".dice1").on("click", function() {
 
