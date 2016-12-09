@@ -27,7 +27,7 @@ var dices = [
     }
 ];
 
-//Funktion för att rulla träningarna. Slumpar fram ett nummer mellan 1-6 för 5 tärningar.
+//Funktion för att slumpar fram ett nummer mellan 1-6 för 5 tärningar.
 
 function rollDice() {
     dices.forEach(function(dice) {
