@@ -16,6 +16,8 @@ function ones(){
 	//resultatet gångas med 1 
 	var result = count * 1;
 	console.log(result);
+	addScoreOne(result);
+	whosPlaying();
 }
 function twoes(){
 	var count = 0;
@@ -27,6 +29,8 @@ function twoes(){
 	})
 	var result = count * 2;
 	console.log(result);
+	addScoreOne(result);
+	whosPlaying();
 }
 function threes(){
 	var count = 0;
@@ -38,6 +42,8 @@ function threes(){
 	})
 	var result = count * 3;
 	console.log(result);
+	addScoreOne(result);
+	whosPlaying();
 }
 function fours(){
 	var count = 0;
@@ -49,6 +55,8 @@ function fours(){
 	})
 	var result = count * 4;
 	console.log(result);
+	addScoreOne(result);
+	whosPlaying();
 }
 function fives(){
 	var count = 0;
@@ -60,6 +68,8 @@ function fives(){
 	})
 	var result = count * 5;
 	console.log(result);
+	addScoreOne(result);
+	whosPlaying();
 }
 function sixes(){
 	var count = 0;
@@ -71,6 +81,8 @@ function sixes(){
 	})
 	var result = count * 6;
 	console.log(result);
+	addScoreOne(result);
+	whosPlaying();
 }
 
 function chance() {
@@ -87,4 +99,6 @@ function chance() {
         sum = sum + x; 
     });
     console.log(sum);
+    addScoreTwo(sum)
+    whosPlaying();
 }

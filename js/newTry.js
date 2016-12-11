@@ -26,6 +26,19 @@ function fullhouse(){
 		})
 		console.log("fullhouse!" + sum)
 	}
+	else{
+		console.log("Sorry no match! Score: " + sum);
+	}
+}
+function pair(){
+	var hand = addDice();
+	sum = 0;
+	for(var i = 1; i < 7; i++){
+			if(hand[i] >= 2){
+				sum = i * 2
+			}
+		}
+		console.log(sum);
 }
 function twoPair(){
 	var hand = addDice();
@@ -40,18 +53,66 @@ function twoPair(){
 	if(pair == 2){
 		console.log(sum);
 	}
+	else{
+		console.log("Sorry no match! Score: " + sum);
+	}
 }
-function threes(){
+
+function threeOfAKind(){
 	var hand = addDice();
-	threes = 0;
 	sum = 0;
-	for(var prop in hand){
-		if(hand[prop] >= 3){
-			sum = sum + prop * 3;
-			threes++
+	for(var i = 1; i < 7; i++){
+			if(hand[i] >= 3){
+				sum = i * 3;
+			}
+		}
+		console.log(sum);
+}
+function fourOfAKind(){
+	var hand = addDice();
+	sum = 0;
+	for(var i = 1; i < 7; i++){
+			if(hand[i] >= 4){
+				sum = i * 4;
+			}
+		}
+		console.log(sum);
+}
+function yatzy(){
+	var hand = addDice();
+	sum = 0;
+	for(var i = 1; i < 7; i++){
+			if(hand[i] >= 5){
+				sum = 50;
+			}
+		}
+		console.log(sum);
+}
+function SMstraight(){
+	var hand = addDice();
+	count = 0;
+	sum = 0
+	for(var i = 1; i <= 5; i++){
+		if(hand[i] == 1){
+			count++
 		}
 	}
-	if(threes == 1){
-		console.log(sum);
+	if(count === 5){
+		sum = 15;
 	}
+	console.log(sum);
+}
+function Lstraight(){
+	var hand = addDice();
+	count = 0;
+	sum = 0
+	for(var i = 2; i <= 6; i++){
+		if(hand[i] == 1){
+			count++
+		}
+	}
+	if(count === 5){
+		sum = 20;
+	}
+	console.log(sum);
 }
