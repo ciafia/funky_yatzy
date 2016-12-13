@@ -8,8 +8,10 @@ h1 {
 
 
 .roll {
-	margin: 10px;
-	margin-left: 19vw;
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 150px;
+	padding: 10px;
 }
 
 .table {
@@ -35,23 +37,25 @@ th:hover {
 
 th {
 	font-family: arial;
-	font-size: bold;
 	font-size: 20px;
-}
+	text-align: center;
+	border-style: solid;
+	}
 
 td {
 	font-family: arial;
-	font-size: bold;
+	font-weight: bold;
 	font-size: 15px;
 }
-.die:hover {
-	background-image: url("../img/MFF.png");
-	z-index: 5;
+
+.center-blocks{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-.alldices{
-	text-align: center;
-	
-
-
+.bonus, .total, .sum, thead{
+	border: black;
+	border-style: solid;
 }
+
