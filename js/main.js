@@ -35,14 +35,27 @@ var turn = {
 var players = []
 var scoreOne = []
 var scoreTwo = []
-
+var bonus = []
+//Choosing number of player (maximum of 4)
 function choosePlayers(count){
-    for(var i = 0; i < count; i++){
-    players.push(i);
-    scoreOne.push(0);
-    scoreTwo.push(0);
+    if(count <= 3){
+        for(var i = 0; i < count; i++){
+        players.push(i);
+        scoreOne.push(0);
+        scoreTwo.push(0);
+        bonus.push(0);
+    }
+    }
+    else{
+        for(var i = 0; i <= 3; i++){
+        players.push(i);
+        scoreOne.push(0);
+        scoreTwo.push(0);
+        bonus.push(0);
+    }
     }
 }
+//determing who is playing and changes turn to next player
 function whosPlaying(){
     turn.rolls = 0;
     dices.forEach(function(dice){
@@ -57,11 +70,32 @@ function whosPlaying(){
         turn.player = 0;
     }
 }
+//Prints score in dom
+function printScore(player,point,score){
+        $("." + point + " .p-" + player).append("<p>" + score + "</p>");
+        $("." + point + " .p-" + player).addClass("full")
+}
+function printTotal(player){
+    $(".total .p-" + player).html(scoreOne[player])
+}
+function printSum(player){
+    finalscore = scoreOne[player] + scoreTwo[player] + bonus[player]
+    $(".sum .p-" + turn.player).html(finalscore)
+}
+//Adds score to scoreOne array
 function addScoreOne(score){
     scoreOne[turn.player] = scoreOne[turn.player] + score;
 }
+//Adds score to scoreTwo array
 function addScoreTwo(score){
     scoreTwo[turn.player] = scoreTwo[turn.player] + score;
+}
+function addBonus(score){
+    if(score > 50 && bonus[turn.player] < 50){
+        bonus[turn.player] = 50
+        $(".bonus .p-" + turn.player).html(bonus[turn.player])
+    }
+    $(".bonus .p-" + turn.player).html(bonus[turn.player])
 }
 //forEach loop som går igenom varje tärning och slumpar fram ett nummer mellan 1-6
 // Vi använder jQuery för att visa tärningar med rätt antal prickar.
@@ -77,12 +111,18 @@ function rollDice() {
         turn.rolls++ 
     } 
     else{
-        console.log("Please choose point");
+        alert("Please choose point");
     } 
 }
 
 // Knapp för att rulla tärningarna
 $(document).ready(function() {
+
+    $(".Addplayer button").on("click", function(){
+        var countPlayers = prompt("please enter player count:", "1")
+        choosePlayers(countPlayers);
+        $(".Addplayer").remove();
+    })
 
     $(".roll").on("click", function() {
         rollDice();
@@ -92,70 +132,65 @@ $(document).ready(function() {
 // går den från rollable = true till rollable = false och kommer därför inte ändras
 // vid nästa kast.
 console.log(dices);
-    $(".dice1").on("click", function() {
-
-        if(dices[0].rollable == true){
-            dices[0].rollable = false;
-            $(".dice1").append("<p>Hold</p>");
-        }
-        else{
-            dices[0].rollable = true;
-            $(".dice1 p").remove();
-        }    
-            console.log(dices[0].rollable);
-    });
-
-    $(".dice2").on("click", function() {
-
-        if(dices[1].rollable == true){
-            dices[1].rollable = false;
-            $(".dice2").append("<p>Hold</p>");
-        }
-        else{
-            dices[1].rollable = true;
-            $(".dice2 p").remove();
-        }
-            console.log(dices[1].rollable);
-
-    });
-
-    $(".dice3").on("click", function() {
-
-        if(dices[2].rollable == true){
-            dices[2].rollable = false;
-            $(".dice3").append("<p>Hold</p>");
-        }
-        else{
-            dices[2].rollable = true;
-            $(".dice3 p").remove();
-        }
-            console.log(dices[2].rollable);
-
-    });
-
-    $(".dice4").on("click", function() {
-
-        if(dices[3].rollable == true){
-            dices[3].rollable = false;
-            $(".dice4").append("<p>Hold</p>");
-        }
-        else{
-            dices[3].rollable = true;
-            $(".dice4 p").remove();
-        }
-            console.log(dices[3].rollable);
-
-    });
-
-    $(".dice5").on("click", function() {
-        if(dices[4].rollable == true){
-            dices[4].rollable = false;
-            $(".dice5").append("<p>Hold</p>");
-        }
-        else{
-            dices[4].rollable = true;
-            $(".dice5 p").remove();
-        }
-            console.log(dices[4].rollable);
-    });
+    dices.forEach(function(dice){
+        $("." + dice.name).on("click", function(){
+            if(dice.value > 0){
+                if(dice.rollable == true){
+                    dice.rollable = false;
+                    $("." + dice.name).append("<p>Hold</p>");
+                }
+                else{
+                    dice.rollable = true;
+                    $("." + dice.name).append("<p>Hold</p>");
+                    $("." + dice.name + " p").remove();
+                }
+            }
+        })
+    })
+    //Our table functions:
+    $(".one").on("click", function(){
+        ones();
+    })
+    $(".two").on("click", function(){
+        twoes();
+    })
+    $(".three").on("click", function(){
+        threes();
+    })
+    $(".four").on("click", function(){
+        fours();
+    })
+    $(".five").on("click", function(){
+        fives();
+    })
+    $(".six").on("click", function(){
+        sixes();
+    })
+    $(".pair").on("click", function(){
+        pair();
+    })
+    $(".2pair").on("click", function(){
+        twoPair();
+    })
+    $(".3ofakind").on("click", function(){
+        threeOfAKind();
+    })
+    $(".4ofakind").on("click", function(){
+        fourOfAKind();
+    })
+    $(".smallstraight").on("click", function(){
+        SMstraight();
+    })
+    $(".largestraight").on("click", function(){
+        Lstraight();
+    })
+    $(".fullhouse").on("click", function(){
+        fullhouse();
+    })
+    $(".chance").on("click", function(){
+        chance();
+    })
+    $(".yatzy").on("click", function(){
+        yatzy();
+    })
 });

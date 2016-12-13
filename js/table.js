@@ -15,9 +15,17 @@ function ones(){
 
 	//resultatet gångas med 1 
 	var result = count * 1;
-	console.log(result);
+	if( $(".one .p-" + turn.player).hasClass("full") != true){
+	printScore(turn.player,"one",result)
 	addScoreOne(result);
+	printTotal(turn.player);
+	addBonus(scoreOne[turn.player]);
+	printSum(turn.player);
 	whosPlaying();
+	}
+	else{
+		alert("Please choose another point!");
+	}
 }
 function twoes(){
 	var count = 0;
@@ -28,9 +36,17 @@ function twoes(){
 		}
 	})
 	var result = count * 2;
-	console.log(result);
+	if( $(".two .p-" + turn.player).hasClass("full") != true){
+	printScore(turn.player,"two",result)
 	addScoreOne(result);
+	printTotal(turn.player);
+	addBonus(scoreOne[turn.player]);
+	printSum(turn.player);
 	whosPlaying();
+	}
+	else{
+		alert("Please choose another point!");
+	}
 }
 function threes(){
 	var count = 0;
@@ -41,9 +57,17 @@ function threes(){
 		}
 	})
 	var result = count * 3;
-	console.log(result);
+	if( $(".three .p-" + turn.player).hasClass("full") != true){
+	printScore(turn.player,"three",result)
 	addScoreOne(result);
+	printTotal(turn.player);
+	addBonus(scoreOne[turn.player]);
+	printSum(turn.player);
 	whosPlaying();
+	}
+	else{
+		alert("Please choose another point!");
+	}
 }
 function fours(){
 	var count = 0;
@@ -54,9 +78,17 @@ function fours(){
 		}
 	})
 	var result = count * 4;
-	console.log(result);
+	if( $(".four .p-" + turn.player).hasClass("full") != true){
+	printScore(turn.player,"four",result)
 	addScoreOne(result);
+	printTotal(turn.player);
+	addBonus(scoreOne[turn.player]);
+	printSum(turn.player);
 	whosPlaying();
+	}
+	else{
+		alert("Please choose another point!");
+	}
 }
 function fives(){
 	var count = 0;
@@ -67,9 +99,17 @@ function fives(){
 		}
 	})
 	var result = count * 5;
-	console.log(result);
+	if( $(".five .p-" + turn.player).hasClass("full") != true){
+	printScore(turn.player,"five",result)
 	addScoreOne(result);
+	printTotal(turn.player);
+	addBonus(scoreOne[turn.player]);
+	printSum(turn.player);
 	whosPlaying();
+	}
+	else{
+		alert("Please choose another point!");
+	}
 }
 function sixes(){
 	var count = 0;
@@ -80,14 +120,22 @@ function sixes(){
 		}
 	})
 	var result = count * 6;
-	console.log(result);
+	if( $(".six .p-" + turn.player).hasClass("full") != true){
+	printScore(turn.player,"six",result)
 	addScoreOne(result);
+	printTotal(turn.player);
+	addBonus(scoreOne[turn.player]);
+	printSum(turn.player);
 	whosPlaying();
+	}
+	else{
+		alert("Please choose another point!");
+	}
 }
 
 function chance() {
 	//ifall det inte finns ngt resultat vill vi ha 0 och inte undefined
-    var sum = 0;
+    var result = 0;
 
     // går igenom alla tärningar 
     dices.forEach(function(dice) {
@@ -96,9 +144,15 @@ function chance() {
         var x = dice.value;
 
         // summan = alla tärningarnas värde tillsammans
-        sum = sum + x; 
+        result = result + x; 
     });
-    console.log(sum);
-    addScoreTwo(sum)
-    whosPlaying();
+    if( $(".chance .p-" + turn.player).hasClass("full") != true){
+	printScore(turn.player,"chance",result)
+	addScoreTwo(result);
+	printSum(turn.player);
+	whosPlaying();
+	}
+	else{
+		alert("Please choose another point!");
+	}
 }

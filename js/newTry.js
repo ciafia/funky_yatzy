@@ -8,111 +8,170 @@ function addDice(){
 }
 function fullhouse(){
 	var hand = addDice();
-	pair = false;
-	threes= false;
-	sum = 0;
+	firstCount = false;
+	secondCount = false;
+	result = 0;
 	for(var prop in hand){
 		if(hand[prop] == 2){
-			pair = true;
+			firstCount = true;
 		}
 		if(hand[prop] == 3){
-			threes = true;
+			secondCount = true;
 		}
-		console.log(hand[prop]);
 	}
-	if(pair === true && threes === true){
+	if(firstCount === true && secondCount === true){
 		dices.forEach(function(dice){
-		sum = sum + dice.value;
+		result = result + dice.value;
 		})
-		console.log("fullhouse!" + sum)
+	}
+	if( $(".fullhouse .p-" + turn.player).hasClass("full") != true){
+	printScore(turn.player,"fullhouse",result)
+	addScoreTwo(result);
+	printSum(turn.player);
+	whosPlaying();
 	}
 	else{
-		console.log("Sorry no match! Score: " + sum);
+		alert("Please choose another point!");
 	}
 }
 function pair(){
 	var hand = addDice();
-	sum = 0;
+	result = 0;
 	for(var i = 1; i < 7; i++){
 			if(hand[i] >= 2){
-				sum = i * 2
+				result = i * 2
 			}
 		}
-		console.log(sum);
+	if( $(".pair .p-" + turn.player).hasClass("full") != true){
+		printScore(turn.player,"pair",result)
+		addScoreTwo(result);
+		printSum(turn.player);
+		whosPlaying();
+	}	
+	else{
+		alert("Please choose another point!");
+	}
 }
 function twoPair(){
 	var hand = addDice();
-	pair = 0;
-	sum = 0;
+	count = 0;
+	result = 0;
 	for(var prop in hand){
 		if(hand[prop] >= 2){
-			sum = sum + prop * 2;
-			pair++
+			result = result + prop * 2;
+			count++
 		}
 	}
-	if(pair == 2){
-		console.log(sum);
+	if(count < 2){
+		result = 0;
 	}
+	if( $(".2pair .p-" + turn.player).hasClass("full") != true){
+		printScore(turn.player,"2pair",result)
+		addScoreTwo(result);
+		printSum(turn.player);
+		whosPlaying();
+	}	
 	else{
-		console.log("Sorry no match! Score: " + sum);
+		alert("Please choose another point!");
 	}
 }
 
 function threeOfAKind(){
 	var hand = addDice();
-	sum = 0;
+	result = 0;
 	for(var i = 1; i < 7; i++){
 			if(hand[i] >= 3){
-				sum = i * 3;
+				result = i * 3;
 			}
 		}
-		console.log(sum);
+		if( $(".3ofakind .p-" + turn.player).hasClass("full") != true){
+		printScore(turn.player,"3ofakind",result)
+		addScoreTwo(result);
+		printSum(turn.player);
+		whosPlaying();
+	}	
+	else{
+		alert("Please choose another point!");
+	}
 }
 function fourOfAKind(){
 	var hand = addDice();
-	sum = 0;
+	result = 0;
 	for(var i = 1; i < 7; i++){
 			if(hand[i] >= 4){
-				sum = i * 4;
+				result = i * 4;
 			}
 		}
-		console.log(sum);
+	if( $(".4ofakind .p-" + turn.player).hasClass("full") != true){
+		printScore(turn.player,"4ofakind",result)
+		addScoreTwo(result);
+		printSum(turn.player);
+		whosPlaying();
+	}	
+	else{
+		alert("Please choose another point!");
+	}
+
 }
 function yatzy(){
 	var hand = addDice();
-	sum = 0;
+	result = 0;
 	for(var i = 1; i < 7; i++){
 			if(hand[i] >= 5){
-				sum = 50;
+				result = 50;
 			}
 		}
-		console.log(sum);
+	if( $(".yatzy .p-" + turn.player).hasClass("full") != true){
+		printScore(turn.player,"yatzy",result)
+		addScoreTwo(result);
+		printSum(turn.player);
+		whosPlaying();
+	}	
+	else{
+		alert("Please choose another point!");
+	}
 }
 function SMstraight(){
 	var hand = addDice();
 	count = 0;
-	sum = 0
+	result = 0
 	for(var i = 1; i <= 5; i++){
 		if(hand[i] == 1){
 			count++
 		}
 	}
 	if(count === 5){
-		sum = 15;
+		result = 15;
 	}
-	console.log(sum);
+	if( $(".smallstraight .p-" + turn.player).hasClass("full") != true){
+		printScore(turn.player,"smallstraight",result)
+		addScoreTwo(result);
+		printSum(turn.player);
+		whosPlaying();
+	}	
+	else{
+		alert("Please choose another point!");
+	}
 }
 function Lstraight(){
 	var hand = addDice();
 	count = 0;
-	sum = 0
+	result = 0
 	for(var i = 2; i <= 6; i++){
 		if(hand[i] == 1){
 			count++
 		}
 	}
 	if(count === 5){
-		sum = 20;
+		result = 20;
 	}
-	console.log(sum);
+	if( $(".largestraight .p-" + turn.player).hasClass("full") != true){
+		printScore(turn.player,"largestraight",result)
+		addScoreTwo(result);
+		printSum(turn.player);
+		whosPlaying();
+	}	
+	else{
+		alert("Please choose another point!");
+	}
 }
