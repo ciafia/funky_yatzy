@@ -27,17 +27,58 @@ var dices = [
         "rollable": true
     }
 ];
+//Turns are working and now we need to finish up and also print score in DOM
+var turn = {
+    "rolls":0,
+    "player":0
+}
+var players = []
+var scoreOne = []
+var scoreTwo = []
 
+function choosePlayers(count){
+    for(var i = 0; i < count; i++){
+    players.push(i);
+    scoreOne.push(0);
+    scoreTwo.push(0);
+    }
+}
+function whosPlaying(){
+    turn.rolls = 0;
+    dices.forEach(function(dice){
+        dice.value = 0;
+        $("." + dice.name).html("<img src='img/dices/" + dice.name + ".gif'>");
+        dice.rollable = true;
+    })
+    if(turn.player < players.length - 1){
+    turn.player++
+    }
+    else{
+        turn.player = 0;
+    }
+}
+function addScoreOne(score){
+    scoreOne[turn.player] = scoreOne[turn.player] + score;
+}
+function addScoreTwo(score){
+    scoreTwo[turn.player] = scoreTwo[turn.player] + score;
+}
 //forEach loop som går igenom varje tärning och slumpar fram ett nummer mellan 1-6
 // Vi använder jQuery för att visa tärningar med rätt antal prickar.
 function rollDice() {
-    dices.forEach(function(dice) {
-        if(dice.rollable == true){
-        dice.value = Math.floor(Math.random() * 6) + 1;
+    if(turn.rolls < 3){
+        dices.forEach(function(dice) {
+            if(dice.rollable == true){
+                dice.value = Math.floor(Math.random() * 6) + 1;
 
-        $("." + dice.name).html("<img src='img/dices/dice" + dice.value + ".gif'>");
-        }
-    });   
+                $("." + dice.name).html("<img src='img/dices/dice" + dice.value + ".gif'>");
+            }
+         }); 
+        turn.rolls++ 
+    } 
+    else{
+        console.log("Please choose point");
+    } 
 }
 
 // Knapp för att rulla tärningarna
