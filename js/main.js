@@ -91,7 +91,7 @@ function addScoreTwo(score){
     scoreTwo[turn.player] = scoreTwo[turn.player] + score;
 }
 function addBonus(score){
-    if(score > 50 && bonus[turn.player] < 50){
+    if(score > 60 && bonus[turn.player] < 50){
         bonus[turn.player] = 50
         $(".bonus .p-" + turn.player).html(bonus[turn.player])
     }
