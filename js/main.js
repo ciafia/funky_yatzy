@@ -60,7 +60,7 @@ function whosPlaying(){
     turn.rolls = 0;
     dices.forEach(function(dice){
         dice.value = 0;
-        $("." + dice.name).html("<img src='img/dices/" + dice.name + ".gif'>");
+        $("." + dice.name).html("<img src='img/dices/" + dice.name + ".jpg'>");
         dice.rollable = true;
     })
     if(turn.player < players.length - 1){
@@ -97,6 +97,7 @@ function addBonus(score){
     }
     $(".bonus .p-" + turn.player).html(bonus[turn.player])
 }
+
 //forEach loop som går igenom varje tärning och slumpar fram ett nummer mellan 1-6
 // Vi använder jQuery för att visa tärningar med rätt antal prickar.
 function rollDice() {
@@ -105,7 +106,7 @@ function rollDice() {
             if(dice.rollable == true){
                 dice.value = Math.floor(Math.random() * 6) + 1;
 
-                $("." + dice.name).html("<img src='img/dices/dice" + dice.value + ".gif'>");
+                $("." + dice.name).html("<img src='img/dices/dice" + dice.value + ".jpg'>");
             }
          }); 
         turn.rolls++ 
