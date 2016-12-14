@@ -138,12 +138,12 @@ console.log(dices);
             if(dice.value > 0){
                 if(dice.rollable == true){
                     dice.rollable = false;
-                    $("." + dice.name).append("<p>Hold</p>");
+                    $("." + dice.name).addClass("hold");
                 }
                 else{
                     dice.rollable = true;
-                    $("." + dice.name).append("<p>Hold</p>");
-                    $("." + dice.name + " p").remove();
+                    $("." + dice.name).addClass("no-hold");
+                    
                 }
             }
         })

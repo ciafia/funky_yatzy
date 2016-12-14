@@ -62,3 +62,11 @@ td {
 	border-style: solid;
 }
 
+.hold {
+	border: red;
+	border-style: solid;
+}
+
+.no-hold {
+	
+}
